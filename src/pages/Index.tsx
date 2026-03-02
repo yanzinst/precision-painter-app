@@ -1,12 +1,33 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import ServicesSection from "@/components/ServicesSection";
+import AboutSection from "@/components/AboutSection";
+import StatsSection from "@/components/StatsSection";
+import ClientsSection from "@/components/ClientsSection";
+import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <HeroSection />
+      <ServicesSection />
+      <AboutSection />
+      <StatsSection />
+      <ClientsSection />
+      <ContactSection />
+
+      {/* Footer */}
+      <footer className="bg-background border-t border-border py-6">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-sm text-muted-foreground">
+            © 2025 Intermidia Digital OOH. Todos os direitos reservados.
+          </p>
+          <p className="text-xs text-muted-foreground mt-1">
+            redeintermidia.com
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
