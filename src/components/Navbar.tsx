@@ -26,10 +26,10 @@ const Navbar = () => {
         scrolled ? "bg-surface-dark/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-4 px-2 lg:px-4">
+      <div className="w-full flex items-center justify-between py-4 px-2">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2">
-          <img src={logo} alt="Intermidia" className="h-16 w-auto" />
+          <img src={logo} alt="Intermidia" className="h-25 w-auto" />
         </a>
 
         {/* Desktop nav */}
@@ -43,19 +43,13 @@ const Navbar = () => {
               {item.label}
             </a>
           ))}
-          <a
-            href="#contato"
-            className="text-sm font-bold text-foreground hover:text-primary transition-colors"
-          >
+          <a href="#contato" className="text-sm font-bold text-foreground hover:text-primary transition-colors">
             Fale conosco
           </a>
         </div>
 
         {/* Mobile hamburger */}
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
+        <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
