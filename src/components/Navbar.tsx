@@ -28,17 +28,6 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2">
-          <div className="flex items-center gap-0.5">
-            <div className="grid grid-cols-2 gap-0.5">
-              <div className="w-2 h-2 rounded-sm bg-primary" />
-              <div className="w-2 h-2 rounded-sm bg-primary" />
-              <div className="w-2 h-2 rounded-sm bg-primary" />
-              <div className="w-2 h-2 rounded-sm bg-primary" />
-            </div>
-          </div>
-          <span className="text-xl font-bold tracking-tight text-foreground">
-            Intermi<span className="text-primary">dia</span>
-          </span>
         </a>
 
         {/* Desktop nav */}
