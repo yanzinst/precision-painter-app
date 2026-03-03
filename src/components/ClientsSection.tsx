@@ -1,8 +1,18 @@
 import { useState, useEffect } from "react";
 import clientBoticarioBacklight from "@/assets/client-boticario-backlight.png";
+import clientMercedes from "@/assets/client-mercedes.png";
+import clientUnimed from "@/assets/client-unimed.png";
+import clientAmbev from "@/assets/client-ambev.png";
+import clientJeep from "@/assets/client-jeep.png";
+import clientHavan from "@/assets/client-havan.png";
 
 const clients = [
   { name: "O Boticário", logo: clientBoticarioBacklight },
+  { name: "Mercedes-Benz", logo: clientMercedes },
+  { name: "Unimed", logo: clientUnimed },
+  { name: "Ambev", logo: clientAmbev },
+  { name: "Jeep", logo: clientJeep },
+  { name: "Havan", logo: clientHavan },
 ];
 
 const ClientsSection = () => {
