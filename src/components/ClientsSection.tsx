@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import clientHavan from "@/assets/client-havan.png";
 import clientBoticario from "@/assets/client-boticario.png";
-import moldeLp from "@/assets/molde-lp.png";
 
 const clients = [
   { name: "Havan", logo: clientHavan },
@@ -19,10 +18,7 @@ const ClientsSection = () => {
   }, []);
 
   return (
-    <section
-      id="clientes"
-      className="py-20 mt-20 relative overflow-hidden"
-    >
+    <section id="clientes" className="py-20 mt-20 relative overflow-hidden">
       {/* Dark background matching stats section style */}
       <div className="absolute inset-0 bg-background" />
 
@@ -31,25 +27,21 @@ const ClientsSection = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-primary italic mb-4">
             Eles já confiam na Intermidia para estar sempre em evidência.
           </h2>
-          <p className="text-lg text-foreground/70">
-            Junte-se às marcas que escolhem comunicar com relevância.
-          </p>
+          <p className="text-lg text-foreground/70">Junte-se às marcas que escolhem comunicar com relevância.</p>
           <p className="text-lg text-foreground">
-            Exiba sua marca com{" "}
-            <strong>destaque nos melhores pontos OOH e DOOH.</strong>
+            Exiba sua marca com <strong>destaque nos melhores pontos OOH e DOOH.</strong>
           </p>
         </div>
 
         {/* Single rotating sponsor card */}
         <div className="flex justify-center mt-10">
-          <div className="relative w-[500px] h-[160px] flex items-center justify-center">
-            <img src={moldeLp} alt="Frame" className="absolute inset-0 w-full h-full object-contain" />
+          <div className="w-[240px] h-[80px] bg-white rounded-xl shadow-lg flex items-center justify-center overflow-hidden relative">
             {clients.map((client, i) => (
               <img
                 key={client.name}
                 src={client.logo}
                 alt={client.name}
-                className="absolute max-h-[60px] max-w-[200px] object-contain transition-opacity duration-700 ease-in-out z-10"
+                className="absolute max-h-[90px] max-w-[200px] object-contain transition-opacity duration-700 ease-in-out"
                 style={{
                   opacity: i === current ? 1 : 0,
                 }}
