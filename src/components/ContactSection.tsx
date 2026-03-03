@@ -57,7 +57,7 @@ const ContactSection = () => {
                 <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
                   <Globe size={18} className="text-primary-foreground" />
                 </div>
-                <span className="text-lg">www.redeintermidia.com/</span>
+                <span className="text-lg">redeintermidia.com</span>
               </a>
             </div>
           </div>
