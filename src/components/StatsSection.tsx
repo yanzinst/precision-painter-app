@@ -1,15 +1,17 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import statsBg from "@/assets/stats-bg.png";
 import cardElevadores from "@/assets/card-elevadores.jpg";
 import cardRestaurantes from "@/assets/card-restaurantes.jpg";
 import cardBigwheel from "@/assets/card-bigwheel.jpg";
+import bigwheel2 from "@/assets/bigwheel-2.jpg";
+import bigwheel3 from "@/assets/bigwheel-3.jpg";
 import cardBacklight from "@/assets/card-backlight.jpg";
 
 const stats = [
-  { label: "Elevadores", sublabel: "comerciais e residenciais", value: 72, unit: "pontos", image: cardElevadores },
-  { label: "Restaurantes", sublabel: "e Cafeterias Premium", value: 58, unit: "pontos", image: cardRestaurantes },
-  { label: "Big Wheel", sublabel: "Roda Gigante ", value: 9, unit: "pontos", image: cardBigwheel },
-  { label: "Backlight", sublabel: "indoor", value: 9, unit: "pontos", image: cardBacklight },
+  { label: "Elevadores", sublabel: "comerciais e residenciais", value: 72, unit: "pontos", images: [cardElevadores] },
+  { label: "Restaurantes", sublabel: "e Cafeterias Premium", value: 58, unit: "pontos", images: [cardRestaurantes] },
+  { label: "Big Wheel", sublabel: "Roda Gigante ", value: 9, unit: "pontos", images: [cardBigwheel, bigwheel2, bigwheel3] },
+  { label: "Backlight", sublabel: "indoor", value: 9, unit: "pontos", images: [cardBacklight] },
 ];
 
 const CountUp = ({ target, inView }: { target: number; inView: boolean }) => {
@@ -33,6 +35,34 @@ const CountUp = ({ target, inView }: { target: number; inView: boolean }) => {
   }, [inView, target]);
 
   return <span>{count}</span>;
+};
+
+const ImageCarousel = ({ images, alt }: { images: string[]; alt: string }) => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <div className="relative w-full h-full">
+      {images.map((img, i) => (
+        <img
+          key={i}
+          src={img}
+          alt={`${alt} ${i + 1}`}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out"
+          style={{
+            transform: `translateX(${(i - current) * 100}%)`,
+          }}
+        />
+      ))}
+    </div>
+  );
 };
 
 const StatsSection = () => {
@@ -74,12 +104,16 @@ const StatsSection = () => {
           {stats.map((stat, i) => (
             <div key={i} className="flex flex-col items-center text-center group">
               {/* Card image with rounded border */}
-              <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden border-2 border-foreground/20 shadow-2xl group-hover:scale-[1.03] transition-transform duration-300 mb-4">
-                <img
-                  src={stat.image}
-                  alt={stat.label}
-                  className="w-full h-full object-cover"
-                />
+              <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden border-2 border-foreground/20 shadow-2xl group-hover:scale-[1.03] transition-transform duration-300 mb-4 relative">
+                {stat.images.length > 1 ? (
+                  <ImageCarousel images={stat.images} alt={stat.label} />
+                ) : (
+                  <img
+                    src={stat.images[0]}
+                    alt={stat.label}
+                    className="w-full h-full object-cover"
+                  />
+                )}
               </div>
               {/* Label */}
               <h3 className="text-lg md:text-xl font-bold text-foreground leading-tight">
