@@ -5,37 +5,37 @@ import serviceElevador from "@/assets/service-elevador.jpg";
 import serviceTela from "@/assets/service-tela.jpg";
 
 const services = [
-  {
-    image: serviceElevador,
-    title: "MONITOR VERTICAL",
-    location: "Elevadores",
-    flow: "FLUXO DE 20.000 PESSOAS/MÊS",
-  },
-  {
-    image: servicePainel,
-    title: "PAINEL LED\nTRIPLA FACE",
-    location: "Av. Harry Prochet",
-    flow: "FLUXO DE 80.000 CARROS/MÊS",
-  },
-  {
-    image: serviceVideowall,
-    title: "VÍDEO WALL",
-    location: "Restaurante O Casarão – Av Maringá",
-    flow: "FLUXO DE 33.000 PESSOAS/MÊS",
-  },
-  {
-    image: serviceTela,
-    title: "TELA VERTICAL",
-    location: "Restaurantes, Padarias, Mercados e Conveniência",
-    flow: "FLUXO DE 33.000 PESSOAS/MÊS",
-  },
-  {
-    image: serviceMonitor,
-    title: "VÍDEO WALL",
-    location: "Panetteria Palhano – Av Ayrton Senna",
-    flow: "FLUXO DE 33.000 PESSOAS/MÊS",
-  },
-];
+{
+  image: serviceElevador,
+  title: "MONITOR VERTICAL",
+  location: "Elevadores",
+  flow: "FLUXO DE 20.000 PESSOAS/MÊS"
+},
+{
+  image: servicePainel,
+  title: "PAINEL LED\nTRIPLA FACE",
+  location: "Av. Harry Prochet",
+  flow: "FLUXO DE 80.000 CARROS/MÊS"
+},
+{
+  image: serviceVideowall,
+  title: "VÍDEO WALL",
+  location: "Restaurante O Casarão – Av Maringá",
+  flow: "FLUXO DE 33.000 PESSOAS/MÊS"
+},
+{
+  image: serviceTela,
+  title: "TELA VERTICAL",
+  location: "Restaurantes, Padarias, Mercados e Conveniência",
+  flow: "FLUXO DE 33.000 PESSOAS/MÊS"
+},
+{
+  image: serviceMonitor,
+  title: "VÍDEO WALL",
+  location: "Panetteria Palhano – Av Ayrton Senna",
+  flow: "FLUXO DE 33.000 PESSOAS/MÊS"
+}];
+
 
 const ServicesSection = () => {
   return (
@@ -44,9 +44,9 @@ const ServicesSection = () => {
       className="relative py-20 overflow-hidden"
       style={{
         background:
-          "linear-gradient(180deg, hsl(16, 30%, 12%) 0%, hsl(0, 0%, 10%) 100%)",
-      }}
-    >
+        "linear-gradient(180deg, hsl(16, 30%, 12%) 0%, hsl(0, 0%, 10%) 100%)"
+      }}>
+      
       <div className="container mx-auto px-4 lg:px-8">
         <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-16 text-foreground">
           O TIMING <span className="font-black">PERFEITO</span>
@@ -54,17 +54,17 @@ const ServicesSection = () => {
 
         {/* Carousel-like cards */}
         <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide px-4">
-          {services.map((service, i) => (
-            <div
-              key={i}
-              className="flex-shrink-0 w-72 md:w-80 snap-center rounded-2xl overflow-hidden bg-card shadow-2xl group hover:scale-[1.02] transition-transform duration-300"
-            >
-              <div className="relative h-64 overflow-hidden">
+          {services.map((service, i) =>
+          <div
+            key={i}
+            className="flex-shrink-0 w-72 md:w-80 snap-center rounded-2xl overflow-hidden bg-card shadow-2xl group hover:scale-[1.02] transition-transform duration-300">
+            
+              <div className="relative h-64 overflow-hidden border-0">
                 <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+                src={service.image}
+                alt={service.title}
+                className="w-full h-full group-hover:scale-110 transition-transform duration-500 object-cover" />
+              
                 {/* Heart icon */}
                 <div className="absolute top-3 left-3 bg-primary/80 rounded-full p-2">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
@@ -84,11 +84,11 @@ const ServicesSection = () => {
                 <p className="text-xs text-muted-foreground mt-1">{service.flow}</p>
               </div>
             </div>
-          ))}
+          )}
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default ServicesSection;
