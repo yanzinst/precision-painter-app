@@ -4,13 +4,13 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
-    >
+      className="relative min-h-screen flex items-center overflow-hidden">
+      
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
+        style={{ backgroundImage: `url(${heroBg})` }} />
+      
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/40" />
 
@@ -35,14 +35,14 @@ const HeroSection = () => {
             href="https://wa.me/5543999922013"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 rounded-lg transition-all text-lg"
-          >
-            43 99992-2013
+            className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 rounded-lg transition-all text-lg">
+            
+            ​QUERO SER VISTO!   
+          
           </a>
         </div>
       </div>
-    </section>
-  );
+    </section>);
 };
 
 export default HeroSection;
