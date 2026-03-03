@@ -1,10 +1,11 @@
 import { Phone, Instagram, Globe } from "lucide-react";
+import contactVideo from "@/assets/contact-video.mp4";
 
 const ContactSection = () => {
   return (
     <section id="contato" className="py-20 bg-surface-dark">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left side */}
           <div>
             <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-foreground leading-none mb-8">Siga - nos nas redes sociais.</h2>
@@ -61,9 +62,18 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Right side - Video placeholder */}
-          <div className="relative rounded-2xl overflow-hidden bg-muted/20 border-2 border-dashed border-primary/30 min-h-[450px] flex items-center justify-center">
-            <p className="text-muted-foreground text-lg">Inserir vídeo aqui</p>
+          {/* Right side - Vertical Video */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="rounded-2xl overflow-hidden shadow-2xl" style={{ aspectRatio: '9/16', maxHeight: '520px' }}>
+              <video
+                src={contactVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
