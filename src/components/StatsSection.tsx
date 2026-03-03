@@ -88,11 +88,6 @@ const StatsSection = () => {
               <p className="text-sm md:text-base text-foreground/80 mb-1">
                 {stat.sublabel}
               </p>
-              {/* Count */}
-              <div className="text-3xl md:text-4xl font-black text-primary">
-                <CountUp target={stat.value} inView={inView} />
-                <span className="text-lg md:text-xl font-bold text-foreground/70 ml-1">{stat.unit}</span>
-              </div>
             </div>
           ))}
         </div>
