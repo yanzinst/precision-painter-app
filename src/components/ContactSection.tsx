@@ -7,8 +7,8 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side */}
           <div>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-foreground leading-none mb-8">
-              LOCALI-
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-foreground leading-none mb-8">Nos siga nas redes sociais.
+
               <br />
               ZAÇÃO
             </h2>
@@ -31,8 +31,8 @@ const ContactSection = () => {
                 href="https://wa.me/5543999922013"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 text-foreground hover:text-primary transition-colors"
-              >
+                className="flex items-center gap-4 text-foreground hover:text-primary transition-colors">
+                
                 <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
                   <Phone size={18} className="text-primary-foreground" />
                 </div>
@@ -43,8 +43,8 @@ const ContactSection = () => {
                 href="https://instagram.com/intermidiadigitalooh"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 text-foreground hover:text-primary transition-colors"
-              >
+                className="flex items-center gap-4 text-foreground hover:text-primary transition-colors">
+                
                 <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
                   <Instagram size={18} className="text-primary-foreground" />
                 </div>
@@ -55,8 +55,8 @@ const ContactSection = () => {
                 href="https://www.redeintermidia.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 text-foreground hover:text-primary transition-colors"
-              >
+                className="flex items-center gap-4 text-foreground hover:text-primary transition-colors">
+                
                 <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
                   <Globe size={18} className="text-primary-foreground" />
                 </div>
@@ -77,8 +77,8 @@ const ContactSection = () => {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Localização Intermidia"
-                className="w-full"
-              />
+                className="w-full" />
+              
             </div>
             {/* Pin decoration */}
             <div className="absolute -bottom-6 -right-6 w-20 h-24">
@@ -87,8 +87,8 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default ContactSection;
