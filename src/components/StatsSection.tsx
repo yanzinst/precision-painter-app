@@ -6,12 +6,13 @@ import cardBigwheel from "@/assets/card-bigwheel.jpg";
 import bigwheel2 from "@/assets/bigwheel-2.jpg";
 import bigwheel3 from "@/assets/bigwheel-3.jpg";
 import cardBacklight from "@/assets/card-backlight.jpg";
+import backlight2 from "@/assets/backlight-2.jpg";
 
 const stats = [
 { label: "Elevadores", sublabel: "comerciais e residenciais", value: 72, unit: "pontos", images: [cardElevadores] },
 { label: "Restaurantes", sublabel: "e Cafeterias Premium", value: 58, unit: "pontos", images: [cardRestaurantes] },
 { label: "Big Wheel", sublabel: "Roda Gigante ", value: 9, unit: "pontos", images: [cardBigwheel, bigwheel2, bigwheel3] },
-{ label: "Backlight", sublabel: "indoor", value: 9, unit: "pontos", images: [cardBacklight] }];
+{ label: "Backlight", sublabel: "indoor", value: 9, unit: "pontos", images: [cardBacklight, backlight2] }];
 
 
 const CountUp = ({ target, inView }: {target: number;inView: boolean;}) => {
