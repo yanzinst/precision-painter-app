@@ -7,11 +7,7 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side */}
           <div>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-foreground leading-none mb-8">Nos siga nas redes sociais.
-
-              <br />
-              ZAÇÃO
-            </h2>
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-foreground leading-none mb-8">Siga - nos nas redes sociais.</h2>
 
             <div className="mb-8">
               <p className="text-xl md:text-2xl font-bold text-foreground mb-1">
