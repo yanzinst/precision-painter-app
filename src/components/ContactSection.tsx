@@ -1,4 +1,4 @@
-import { Phone, Instagram, Globe, MapPin } from "lucide-react";
+import { Phone, Instagram, Globe } from "lucide-react";
 
 const ContactSection = () => {
   return (
@@ -61,25 +61,9 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Right side - Map */}
-          <div className="relative">
-            <div className="rounded-2xl overflow-hidden border-4 border-primary/30 shadow-2xl">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3661.5!2d-51.165!3d-23.315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDE4JzU0LjAiUyA1McKwMDknNTQuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
-                width="100%"
-                height="450"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Localização Intermidia"
-                className="w-full" />
-              
-            </div>
-            {/* Pin decoration */}
-            <div className="absolute -bottom-6 -right-6 w-20 h-24">
-              <MapPin size={80} className="text-primary drop-shadow-2xl" />
-            </div>
+          {/* Right side - Video placeholder */}
+          <div className="relative rounded-2xl overflow-hidden bg-muted/20 border-2 border-dashed border-primary/30 min-h-[450px] flex items-center justify-center">
+            <p className="text-muted-foreground text-lg">Inserir vídeo aqui</p>
           </div>
         </div>
       </div>
