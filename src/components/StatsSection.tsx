@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from "react";
-import serviceElevador from "@/assets/service-elevador.jpg";
-import serviceTela from "@/assets/service-tela.jpg";
-import servicePainel from "@/assets/service-painel.jpg";
-import serviceVideowall from "@/assets/service-videowall.jpg";
+import statsBg from "@/assets/stats-bg.png";
+import cardElevadores from "@/assets/card-elevadores.jpg";
+import cardRestaurantes from "@/assets/card-restaurantes.jpg";
+import cardBigwheel from "@/assets/card-bigwheel.jpg";
+import cardBacklight from "@/assets/card-backlight.jpg";
 
 const stats = [
-  { label: "ELEVADORES", value: 72, image: serviceElevador },
-  { label: "TELAS VERTICAIS", value: 58, image: serviceTela },
-  { label: "PAINEL LED", value: 10, image: servicePainel },
-  { label: "VÍDEO WALL", value: 9, image: serviceVideowall },
+  { label: "Elevadores", sublabel: "comerciais e residenciais", value: 72, unit: "pontos", image: cardElevadores },
+  { label: "Restaurantes", sublabel: "e Cafeterias Premium", value: 58, unit: "pontos", image: cardRestaurantes },
+  { label: "Circuito", sublabel: "Big Wheel", value: 9, unit: "pontos", image: cardBigwheel },
+  { label: "Backlight", sublabel: "indoor", value: 9, unit: "pontos", image: cardBacklight },
 ];
 
 const CountUp = ({ target, inView }: { target: number; inView: boolean }) => {
@@ -50,34 +51,47 @@ const StatsSection = () => {
   return (
     <section
       id="onde-estamos"
-      className="py-20 bg-background"
+      className="relative py-20 md:py-28 overflow-hidden"
       ref={ref}
     >
-      <div className="container mx-auto px-4 lg:px-8">
-        <h2 className="text-2xl md:text-4xl font-bold text-center text-foreground mb-2">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${statsBg})` }}
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-background/70" />
+
+      <div className="relative container mx-auto px-4 lg:px-8">
+        <h2 className="text-2xl md:text-4xl font-semibold text-foreground mb-1">
           Estamos presentes nas cidades de:
         </h2>
-        <p className="text-xl md:text-2xl font-bold text-center text-foreground mb-16">
+        <p className="text-2xl md:text-4xl font-bold text-foreground mb-16">
           Londrina, Maringá e Balneário Camboriú.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
           {stats.map((stat, i) => (
             <div key={i} className="flex flex-col items-center text-center group">
-              <div className="bg-foreground/10 rounded-lg px-4 py-1 mb-3">
-                <span className="text-xs md:text-sm font-bold tracking-wider text-foreground">
-                  {stat.label}
-                </span>
-              </div>
-              <div className="text-5xl md:text-7xl font-black text-primary mb-4">
-                <CountUp target={stat.value} inView={inView} />
-              </div>
-              <div className="w-48 h-64 md:w-56 md:h-72 rounded-xl overflow-hidden shadow-2xl group-hover:scale-105 transition-transform duration-300">
+              {/* Card image with rounded border */}
+              <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden border-2 border-foreground/20 shadow-2xl group-hover:scale-[1.03] transition-transform duration-300 mb-4">
                 <img
                   src={stat.image}
                   alt={stat.label}
                   className="w-full h-full object-cover"
                 />
+              </div>
+              {/* Label */}
+              <h3 className="text-lg md:text-xl font-bold text-foreground leading-tight">
+                {stat.label}
+              </h3>
+              <p className="text-sm md:text-base text-foreground/80 mb-1">
+                {stat.sublabel}
+              </p>
+              {/* Count */}
+              <div className="text-3xl md:text-4xl font-black text-primary">
+                <CountUp target={stat.value} inView={inView} />
+                <span className="text-lg md:text-xl font-bold text-foreground/70 ml-1">{stat.unit}</span>
               </div>
             </div>
           ))}
