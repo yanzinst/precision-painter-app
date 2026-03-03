@@ -8,7 +8,7 @@ import cardBacklight from "@/assets/card-backlight.jpg";
 const stats = [
   { label: "Elevadores", sublabel: "comerciais e residenciais", value: 72, unit: "pontos", image: cardElevadores },
   { label: "Restaurantes", sublabel: "e Cafeterias Premium", value: 58, unit: "pontos", image: cardRestaurantes },
-  { label: "Circuito", sublabel: "Big Wheel", value: 9, unit: "pontos", image: cardBigwheel },
+  { label: "Big Wheel", sublabel: "Big Wheel", value: 9, unit: "pontos", image: cardBigwheel },
   { label: "Backlight", sublabel: "indoor", value: 9, unit: "pontos", image: cardBacklight },
 ];
 
