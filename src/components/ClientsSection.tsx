@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import clientHavan from "@/assets/client-havan.png";
 import clientBoticario from "@/assets/client-boticario.png";
+import moldeLp from "@/assets/molde-lp.png";
 
 const clients = [
   { name: "Havan", logo: clientHavan },
@@ -41,13 +42,14 @@ const ClientsSection = () => {
 
         {/* Single rotating sponsor card */}
         <div className="flex justify-center mt-10">
-          <div className="w-[240px] h-[80px] bg-white rounded-xl shadow-lg flex items-center justify-center overflow-hidden relative">
+          <div className="relative w-[500px] h-[160px] flex items-center justify-center">
+            <img src={moldeLp} alt="Frame" className="absolute inset-0 w-full h-full object-contain" />
             {clients.map((client, i) => (
               <img
                 key={client.name}
                 src={client.logo}
                 alt={client.name}
-                className="absolute max-h-[60px] max-w-[200px] object-contain transition-opacity duration-700 ease-in-out"
+                className="absolute max-h-[60px] max-w-[200px] object-contain transition-opacity duration-700 ease-in-out z-10"
                 style={{
                   opacity: i === current ? 1 : 0,
                 }}
