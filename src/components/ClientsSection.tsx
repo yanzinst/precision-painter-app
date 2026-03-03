@@ -23,8 +23,8 @@ const ClientsSection = () => {
       <div className="absolute inset-0 bg-background" />
 
       <div className="relative container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-primary italic mb-4">
+        <div className="text-center mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary italic mb-2">
             Eles já confiam na Intermidia para estar sempre em evidência.
           </h2>
           <p className="text-lg text-foreground/70">Junte-se às marcas que escolhem comunicar com relevância.</p>
@@ -35,7 +35,7 @@ const ClientsSection = () => {
 
         {/* Single rotating sponsor card */}
         <div className="flex justify-center mt-10">
-          <div className="w-[240px] h-[80px] bg-white rounded-xl shadow-lg flex items-center justify-center overflow-hidden relative">
+          <div className="w-[312px] h-[104px] bg-white rounded-xl shadow-lg flex items-center justify-center overflow-hidden relative">
             {clients.map((client, i) => (
               <img
                 key={client.name}
