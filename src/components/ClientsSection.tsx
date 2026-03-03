@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
-import clientHavan from "@/assets/client-havan.png";
-import clientBoticario from "@/assets/client-boticario.png";
+import clientBoticarioBacklight from "@/assets/client-boticario-backlight.png";
 
 const clients = [
-  { name: "Havan", logo: clientHavan },
-  { name: "O Boticário", logo: clientBoticario },
+  { name: "O Boticário", logo: clientBoticarioBacklight },
 ];
 
 const ClientsSection = () => {
@@ -35,13 +33,13 @@ const ClientsSection = () => {
 
         {/* Single rotating sponsor card */}
         <div className="flex justify-center mt-10">
-          <div className="w-[312px] h-[104px] bg-white rounded-xl shadow-lg flex items-center justify-center overflow-hidden relative">
+          <div className="w-[500px] h-[200px] rounded-xl shadow-lg overflow-hidden relative">
             {clients.map((client, i) => (
               <img
                 key={client.name}
                 src={client.logo}
                 alt={client.name}
-                className="absolute max-h-[90px] max-w-[200px] object-contain transition-opacity duration-700 ease-in-out"
+                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
                 style={{
                   opacity: i === current ? 1 : 0,
                 }}
