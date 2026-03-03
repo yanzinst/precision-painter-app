@@ -1,47 +1,59 @@
-const clientNames = [
-  "Cipasa", "Todimo", "PLAENGE", "AURORA", "Jeep", "Unimed",
-  "Colégio Positivo", "BrasilSul", "SICOOB", "ZEISS", "Jurema", "HAVAN",
-  "HS Consórcios", "Pamplona", "bw8", "Claro", "Evangélico", "Sicredi",
-  "Anjos", "Mercedes-Benz", "PUCPR", "ambev", "O Boticário", "Muffato",
-  "Budweiser", "TOYOTA", "Viação Garcia", "GWM",
+import { useState, useEffect } from "react";
+import clientHavan from "@/assets/client-havan.png";
+import clientBoticario from "@/assets/client-boticario.png";
+
+const clients = [
+  { name: "Havan", logo: clientHavan },
+  { name: "O Boticário", logo: clientBoticario },
 ];
 
 const ClientsSection = () => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % clients.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="clientes"
-      className="py-20 relative overflow-hidden"
+      className="py-20 mt-20 relative overflow-hidden"
     >
-      {/* Light background with orange side accents */}
-      <div className="absolute inset-0 bg-surface-light" />
-      <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-primary rounded-r-[3rem]" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-primary rounded-l-[3rem]" />
+      {/* Dark background matching stats section style */}
+      <div className="absolute inset-0 bg-background" />
 
       <div className="relative container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <h2 className="text-2xl md:text-3xl font-bold text-primary italic mb-4">
             Eles já confiam na Intermidia para estar sempre em evidência.
           </h2>
-          <p className="text-lg text-surface-light-foreground/70">
+          <p className="text-lg text-foreground/70">
             Junte-se às marcas que escolhem comunicar com relevância.
           </p>
-          <p className="text-lg text-surface-light-foreground">
+          <p className="text-lg text-foreground">
             Exiba sua marca com{" "}
             <strong>destaque nos melhores pontos OOH e DOOH.</strong>
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6 md:gap-8 max-w-5xl mx-auto">
-          {clientNames.map((name, i) => (
-            <div
-              key={i}
-              className="bg-surface-light border border-border/20 rounded-lg px-5 py-3 shadow-sm hover:shadow-md transition-shadow flex items-center justify-center min-w-[120px]"
-            >
-              <span className="text-sm font-semibold text-surface-light-foreground/80">
-                {name}
-              </span>
-            </div>
-          ))}
+        {/* Single rotating sponsor card */}
+        <div className="flex justify-center mt-10">
+          <div className="w-[240px] h-[80px] bg-white rounded-xl shadow-lg flex items-center justify-center overflow-hidden relative">
+            {clients.map((client, i) => (
+              <img
+                key={client.name}
+                src={client.logo}
+                alt={client.name}
+                className="absolute max-h-[60px] max-w-[200px] object-contain transition-opacity duration-700 ease-in-out"
+                style={{
+                  opacity: i === current ? 1 : 0,
+                }}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
